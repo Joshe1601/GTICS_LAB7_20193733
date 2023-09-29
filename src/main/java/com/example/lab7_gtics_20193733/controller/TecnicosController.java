@@ -56,7 +56,7 @@ public class TecnicosController {
     @PostMapping(value ="/tecnicos/guardar")
     public String guardarSitio(@ModelAttribute("technician") Technician technician, RedirectAttributes attr) {
 
-        if(technician.getTechnicianid() == 0){
+        if(technician.getTechnicianid() == null){
             attr.addFlashAttribute("msg", "Técnico " + technician.getFirstname() + technician.getLastname() + " creado exitosamente");
         } else {
             attr.addFlashAttribute("msg", "Técnico "  + technician.getFirstname() + technician.getLastname() + " actualizado exitosamente");

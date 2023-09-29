@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface DeviceRepository extends JpaRepository<Device, Integer> {
-    @Query(value = "SELECT Country, count(*) FROM location INNER JOIN site ON location.LocationID = site.LocationID INNER JOIN device On site.SiteID = device.SiteID GROUP BY Country", nativeQuery = true)
+    @Query(value = "SELECT Country, count(*) AS Devices FROM location INNER JOIN site ON location.LocationID = site.LocationID INNER JOIN device On site.SiteID = device.SiteID GROUP BY Country", nativeQuery = true)
     List<DevicesPerCountriesDto> getDevicesPerCountries();
 }

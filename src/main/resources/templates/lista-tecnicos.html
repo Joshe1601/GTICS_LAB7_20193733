@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <link th:href="@{/bootstrap.min.css}" rel="stylesheet" crossorigin="anonymous">
-    <title>Lista de sitios</title>
+    <title>Lista de técnicos</title>
 </head>
 <body>
 <header class="header" th:replace="~{fragmentos/header-static :: header}"></header>
 <main>
     <div class="container">
-        <h1 class="pb-2 mb-4 border-bottom">Lista de sitios</h1>
-        <a href="/tecnicos/nuevo" class="btn btn-outline-primary">Nuevo sitio</a>
+        <h1 class="pb-2 mb-4 border-bottom">Lista de Técnicos</h1>
+        <a href="/tecnicos/nuevo" class="btn btn-outline-primary">Nuevo tecnico</a>
 
         <div th:if="${msg!=null}" th:text="${msg}" class="alert alert-success"></div>
         <table class="table table-bordered table-striped">
