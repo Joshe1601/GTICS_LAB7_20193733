@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/bootstrap.min.css}" rel="stylesheet" crossorigin="anonymous">
+    <title>Lista de sitios</title>
+</head>
+<body>
+<header class="header" th:replace="~{fragmentos/header-static :: header}"></header>
+<main>
+    <div class="container">
+        <h1 class="pb-2 mb-4 border-bottom">Lista de sitios</h1>
+        <a href="/sitios/nuevo" class="btn btn-outline-primary">Nuevo sitio</a>
+
+        <div th:if="${msg!=null}" th:text="${msg}" class="alert alert-success"></div>
+        <div th:if="${msg2!=null}" th:text="${msg2}" class="alert alert-danger"></div>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Locación</th>
+                <th scope="col">Fecha de instalación</th>
+                <th scope="col">Latitud</th>
+                <th scope="col">Longitud</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="sitio : ${listaTecnicos}">
+                <td th:text="${tecnico.sitename}"></td>
+                <td th:text="${tecnico.locationid.country + ' - ' +tecnico.locationid.city}"></td>
+                <td th:text="${tecnico.installationdate}"></td>
+                <td th:text="${tecnico.latitude}"></td>
+                <td th:text="${tecnico.longitude}"></td>
+                <td>
+                    <a th:href="@{'tecnicos/editar' + '/' + ${tecnico.siteid}}" class="btn btn-warning">Editar</a>
+                    <a th:href="@{'tecnicos/borrar' + '/' + ${tecnico.siteid}}" class="btn btn-danger">Borrar</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+</main>
+</body>
+</html>
