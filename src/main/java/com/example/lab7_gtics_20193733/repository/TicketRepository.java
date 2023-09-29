@@ -7,6 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TicketRepository extends JpaRepository<Ticket, Integer>{
-    @Query(value = "SELECT SiteName, count(ticket.TicketID) FROM site INNER JOIN ticket GROUP BY SiteName", nativeQuery = true)
-    public String[] getEstadistics();
+
 }

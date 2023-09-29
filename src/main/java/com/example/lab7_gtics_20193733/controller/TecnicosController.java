@@ -1,6 +1,7 @@
 package com.example.lab7_gtics_20193733.controller;
 
 import com.example.lab7_gtics_20193733.entity.Technician;
+import com.example.lab7_gtics_20193733.repository.DeviceRepository;
 import com.example.lab7_gtics_20193733.repository.LocationRepository;
 import com.example.lab7_gtics_20193733.repository.TechnicianRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,8 @@ import java.util.Optional;
 public class TecnicosController {
     @Autowired
     private TechnicianRepository technicianRepository;
+
+
 
     @GetMapping(value ="/")
     public String defaultPage() {
@@ -54,9 +57,9 @@ public class TecnicosController {
     public String guardarSitio(@ModelAttribute("technician") Technician technician, RedirectAttributes attr) {
 
         if(technician.getTechnicianid() == 0){
-            attr.addFlashAttribute("msg", "Técnico creado exitosamente");
+            attr.addFlashAttribute("msg", "Técnico " + technician.getFirstname() + technician.getLastname() + " creado exitosamente");
         } else {
-            attr.addFlashAttribute("msg", "Técnico actualizado exitosamente");
+            attr.addFlashAttribute("msg", "Técnico "  + technician.getFirstname() + technician.getLastname() + " actualizado exitosamente");
         }
         technicianRepository.save(technician);
 
