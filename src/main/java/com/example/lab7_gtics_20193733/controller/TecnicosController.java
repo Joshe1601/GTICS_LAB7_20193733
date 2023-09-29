@@ -57,9 +57,9 @@ public class TecnicosController {
     public String guardarSitio(@ModelAttribute("technician") Technician technician, RedirectAttributes attr) {
 
         if(technician.getTechnicianid() == null){
-            attr.addFlashAttribute("msg", "Técnico " + technician.getFirstname() + technician.getLastname() + " creado exitosamente");
+            attr.addFlashAttribute("msg", "Técnico " + technician.getFirstname() + " " + technician.getLastname() + " creado exitosamente");
         } else {
-            attr.addFlashAttribute("msg", "Técnico "  + technician.getFirstname() + technician.getLastname() + " actualizado exitosamente");
+            attr.addFlashAttribute("msg", "Técnico "  + technician.getFirstname() + " " + technician.getLastname() + " actualizado exitosamente");
         }
         technicianRepository.save(technician);
 

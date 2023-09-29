@@ -12,6 +12,7 @@
         <h1 class="pb-2 mb-4 border-bottom">Nuevo tecnico</h1>
 
         <form action="/tecnicos/guardar" method="post" th:object="${technician}">
+            <input type="hidden" th:field="*{technicianid}">
             <div class="form-group">
                 <label for="firstName">Nombre</label>
                 <input type="text" class="form-control" th:field="*{firstname}" placeholder="Ingrese su nombre">
