@@ -1,6 +1,6 @@
 package com.example.lab7_gtics_20193733.repository;
 
-import com.example.gtics_lab6_20193733.entity.Location;
+import com.example.lab7_gtics_20193733.entity.Location;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

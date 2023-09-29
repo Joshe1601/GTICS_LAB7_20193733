@@ -22,6 +22,9 @@ public class Technician {
     @Column (name = "LastName")
     private String lastname;
 
+    @Column (name = "Dni")
+    private String dni;
+
     @Column (name = "Phone")
     private String phone;
 

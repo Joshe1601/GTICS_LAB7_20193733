@@ -10,30 +10,28 @@
 <main>
     <div class="container">
         <h1 class="pb-2 mb-4 border-bottom">Lista de sitios</h1>
-        <a href="/sitios/nuevo" class="btn btn-outline-primary">Nuevo sitio</a>
+        <a href="/tecnicos/nuevo" class="btn btn-outline-primary">Nuevo sitio</a>
 
         <div th:if="${msg!=null}" th:text="${msg}" class="alert alert-success"></div>
-        <div th:if="${msg2!=null}" th:text="${msg2}" class="alert alert-danger"></div>
         <table class="table table-bordered table-striped">
             <thead>
             <tr>
                 <th scope="col">Nombre</th>
-                <th scope="col">Locación</th>
-                <th scope="col">Fecha de instalación</th>
-                <th scope="col">Latitud</th>
-                <th scope="col">Longitud</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">DNI</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Teléfono</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="sitio : ${listaTecnicos}">
-                <td th:text="${tecnico.sitename}"></td>
-                <td th:text="${tecnico.locationid.country + ' - ' +tecnico.locationid.city}"></td>
-                <td th:text="${tecnico.installationdate}"></td>
-                <td th:text="${tecnico.latitude}"></td>
-                <td th:text="${tecnico.longitude}"></td>
+            <tr th:each="tecnico : ${listaTecnicos}">
+                <td th:text="${tecnico.firstname}"></td>
+                <td th:text="${tecnico.lastname}"></td>
+                <td th:text="${tecnico.dni}"></td>
+                <td th:text="${tecnico.age}"></td>
+                <td th:text="${tecnico.phone}"></td>
                 <td>
-                    <a th:href="@{'tecnicos/editar' + '/' + ${tecnico.siteid}}" class="btn btn-warning">Editar</a>
-                    <a th:href="@{'tecnicos/borrar' + '/' + ${tecnico.siteid}}" class="btn btn-danger">Borrar</a>
+                    <a th:href="@{'tecnicos/editar' + '/' + ${tecnico.technicianid}}" class="btn btn-warning">Editar</a>
                 </td>
             </tr>
             </tbody>
